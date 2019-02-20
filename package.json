@@ -6,7 +6,8 @@
     "start": "react-native run-android",
     "test": "jest",
     "install": "npm run link-components",
-    "link-components": "npm link react-native-webview-quill && metro-with-symlinks"
+    "link-components": "npm link react-native-webview-quill && metro-with-symlinks",
+    "tsc": "tsc"
   },
   "dependencies": {
     "react": "16.6.3",
@@ -34,6 +35,21 @@
     "typescript": "^3.3.3"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "modulePaths": [
+      "<rootDir>"
+    ]
   }
 }
