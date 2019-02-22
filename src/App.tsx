@@ -12,9 +12,9 @@ import * as React from 'react';
 import { providerRegistry, Quill } from 'react-native-webview-quill';
 import ReactNativeWebView from 'react-native-webview-quill/src/connectors/webView/ReactNativeWebView';
 
-providerRegistry.WebView = ReactNativeWebView;
+providerRegistry.WebViewComponent = ReactNativeWebView;
 
-console.log(providerRegistry.WebView);
+console.log(providerRegistry.WebViewComponent);
 
 export default class App extends React.Component {
   public render() {
