@@ -12,6 +12,7 @@
   "dependencies": {
     "react": "16.6.3",
     "react-native": "0.58.5",
+    "react-native-webview": "^5.2.1",
     "react-native-webview-quill": "github:luudjanssen/react-native-webview-quill"
   },
   "devDependencies": {
