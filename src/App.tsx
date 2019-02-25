@@ -10,11 +10,9 @@
 
 import * as React from 'react';
 import { providerRegistry, Quill } from 'react-native-webview-quill';
-import CommunityWebView from 'react-native-webview-quill/src/connectors/webView/CommunityWebView';
+import { WebView } from 'react-native-webview-quill/src/providers/WebView/Community/index';
 
-providerRegistry.WebViewComponent = CommunityWebView;
-
-console.log(providerRegistry.WebViewComponent);
+providerRegistry.WebViewProvider = WebView;
 
 export default class App extends React.Component {
   public render() {
