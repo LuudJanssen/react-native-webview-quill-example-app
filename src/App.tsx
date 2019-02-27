@@ -8,14 +8,45 @@
  * @format
  */
 
+import { DeltaStatic } from 'quill-delta';
 import * as React from 'react';
+import { View } from 'react-native';
 import { providerRegistry, Quill } from 'react-native-webview-quill';
 import { WebView } from 'react-native-webview-quill/src/providers/WebView/Community/index';
 
 providerRegistry.WebViewProvider = WebView;
 
+const defaultOps = {
+  ops: [
+    {
+      insert: 'Test',
+      attributes: {
+        bold: true,
+      },
+    },
+  ],
+};
+
 export default class App extends React.Component {
-  public render() {
-    return <Quill />;
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      content: defaultOps,
+    };
   }
+
+  public render() {
+    return (
+      <View style={{ flex: 1 }}>
+        <Quill content={this.state.content} onContentChange={this.onContentChange} />
+        <Quill content={this.state.content} onContentChange={this.onContentChange} />
+      </View>
+    );
+  }
+
+  private onContentChange = (content: DeltaStatic) => {
+    this.setState({ content });
+
+    console.log('CONTENT', content);
+  };
 }
