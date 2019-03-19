@@ -27,6 +27,12 @@ const defaultOps = {
   ],
 };
 
+const options = {
+  modules: {
+    toolbar: [['bold', 'italic'], ['link', 'image']],
+  },
+};
+
 export default class App extends React.Component {
   constructor(props: any) {
     super(props);
@@ -38,7 +44,11 @@ export default class App extends React.Component {
   public render() {
     return (
       <View style={{ flex: 1 }}>
-        <Quill content={this.state.content} onContentChange={this.onContentChange} />
+        <Quill
+          content={this.state.content}
+          onContentChange={this.onContentChange}
+          options={options}
+        />
         <Quill content={this.state.content} onContentChange={this.onContentChange} />
       </View>
     );
