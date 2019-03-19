@@ -27,6 +27,12 @@ const defaultOps = {
   ],
 };
 
+const options = {
+  modules: {
+    toolbar: [['bold', 'italic'], ['link', 'image']],
+  },
+};
+
 export default class App extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
@@ -40,6 +46,7 @@ export default class App extends React.Component<any, any> {
       <Quill
         content={this.state.content}
         onContentChange={this.onContentChange}
+        options={options}
         containerStyle={{ flex: 1, backgroundColor: 'red' }}
       />
     );
