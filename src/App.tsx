@@ -27,7 +27,7 @@ const defaultOps = {
   ],
 };
 
-export default class App extends React.Component {
+export default class App extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -37,10 +37,11 @@ export default class App extends React.Component {
 
   public render() {
     return (
-      <View style={{ flex: 1 }}>
-        <Quill content={this.state.content} onContentChange={this.onContentChange} />
-        <Quill content={this.state.content} onContentChange={this.onContentChange} />
-      </View>
+      <Quill
+        content={this.state.content}
+        onContentChange={this.onContentChange}
+        containerStyle={{ flex: 1, backgroundColor: 'red' }}
+      />
     );
   }
 
